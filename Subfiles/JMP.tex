@@ -1,3 +1,4 @@
+% -*- mode: LaTeX; TeX-PDF-mode: t; -*- # Tell emacs file type (for syntax coloring)
 \input{./econtexRoot.texinput}
 \documentclass[\econtexRoot/Letter]{subfiles}
 \onlyinsubfile{\externaldocument{\econtexRoot/Letter}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
@@ -5,20 +6,17 @@
 \begin{document}
 \notinsubfile{\renewcommand{\econtexRoot}{.}}
 
-%\hypertarget{model}{}\par\section{Model}
-%\notinsubfile{\label{sec:model}}
+\hypertarget{job-market-paper}{}
+%\par\section{Job Market Paper}
+\notinsubfile{\label{sec:job-market-paper}}
 
 %[Description of JMP and any other relevant work] \\
 
-William's job market paper evaluates the macroeconomic consequences of the long lasting negative effects of unemployment on labor earnings in the transmission unemployment risk as a business cycle amplifier and in the transmission of UI as a macroeconomic stabilizer. To do so, he builds a heterogeneous agent New Keynesian (HANK) model with search and matching frictions augmented to include human capital dynamics. His model matches the persistent earnings loss following job displacement that is present in the data, the path of IMPCs documented in Norwegian data, and the distribution of liquid wealth consistent with the Survey of Consumer Finances. With the model in hand, he shows that precautionary saving in response to heightened unemployment risk is substantially larger when households are subject to long term earnings loss following job displacement. Over the business cycle, he demonstrates that unemployment risk is a much stronger amplifier of fluctuations and that UI multipliers rise with the policy horizon largely due to their effect on expectations as opposed to their stimulative effect on income. For longer policy horizons, he finds that extending UI is considerably more stimulative than increasing the UI replacement rate as it precisely mitigates the precautionary saving that arises against the possibility of long term unemployment. 
+Will's job market paper evaluates the macroeconomic consequences of the fact that unemployment spells have long-lasting negative effects on labor earnings.  To do so, he builds a heterogeneous agent New Keynesian (HANK) model with search and matching frictions augmented to include human capital dynamics (the assumed channel for the long-lasting effects of unemployment). His model matches the persistent earnings loss following job displacement that is present in the data, the path of IMPCs documented in Norwegian data, and generates distribution of liquid wealth consistent with data from the \textit{Survey of Consumer Finances}. With the model in hand, he shows that precautionary saving in response to heightened unemployment risk is much larger than in existing models. Over the business cycle, he shows that in his model vs existing HANK models, unemployment is a much stronger amplifier of fluctuations and that the automatic-stabilizer effects of UI spring largely from the precautionary channel as opposed to their stimulative effect on income. For longer policy horizons, he finds that extending UI is considerably more stimulative than increasing the UI replacement rate, because UI extension more effectively mitigates the precautionary saving that arises against the possibility of long term unemployment. 
 
+% Put here a link to the abstract of the JMP:
 
-%\textbf{ \large JMP Abstract}\\
-
-%Unemployment has long lasting negative effects on labor earnings that persists even after reemployment. In this paper, I study the macroeconomic consequences of these microeconomic effects on business cycle fluctuations and in the transmission of unemployment insurance policies. Using a heterogeneous agent New Keynesian (HANK) model with search and matching frictions augmented to include human capital dynamics, I show that precautionary saving in response to heightened unemployment risk is substantially larger when households are subject to long term earnings loss following job displacement. Over the business cycle, unemployment risk is a much stronger amplifier of fluctuations and UI multipliers rise with the policy horizon largely due to their effect on expectations as opposed to their stimulative effect on income. For longer policy horizons, extending UI is considerably more stimulative than increasing the UI replacement rate as it precisely mitigates the precautionary saving that arises against the possibility of long term unemployment. 
-
-
-%%% Figures below:
+%%% Template for any figures
 %\begin{figure}[ht!]
 %	\centering
 %	\includegraphics[width = 0.8\textwidth]{\FigDir/dur_vs_exp_emp.png}

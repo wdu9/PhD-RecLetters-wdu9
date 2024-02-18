@@ -1,3 +1,6 @@
+% 20231106:
+% - Remove natbib because it does not work with citation-style-language
+% - Remove headings from \LoadClass{scrartcl} because it generates an annoying warning 
 %%% LaTeX class for economics
 %%%
 %%% author: Christopher Carroll
@@ -13,8 +16,8 @@
 %%% This document class is based on the "scrartcl" class
 %%% from the KOMA script bundle.  For documentation, Google KOMA-Script Documentation
 %%%
-%%% The corresponding BibTeX style file "econtex.bst" should be used
-%%% for the bibliography: \bibliographystyle{econtex}
+%%% The corresponding BibTeX style file "handout.bst" should be used
+%%% for the bibliography: \bibliographystyle{handout}
 %%%
 %%% In addition to the options for scrartcl, this package includes an additional option
 %%% titlepage = include a title page (with command "\maketitle", or "\maketitleWithForcedDate{}")
@@ -27,7 +30,8 @@
 %%%     \jelclass can be used to show JEL classifications below the abstract
 %%%     \thanks{text of the thank-you footnote} produces a footnote at the bottom of the page containing the text
 
-\ProvidesClass{econtex}[2017/08/01 LaTeX class for economics papers, handouts, and exam questions written by Christopher Carroll]
+% Made by handoutMake.sh
+\ProvidesClass{handout}[2023/03/05 LaTeX class for handouts written by Christopher Carroll]
 \NeedsTeXFormat{LaTeX2e}
 % \RequirePackage{rotating}
 \RequirePackage{snapshot} % Creates list of external files used by a LaTeX document
@@ -50,7 +54,7 @@
 % pass any options on to the scrartcl class and load this class with some options
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
 \ProcessOptions\relax
-\LoadClass[fontsize=12pt,english,numbers=noenddot,captions=tableheading,captions=nooneline,headings=optiontocandhead]{scrartcl}
+\LoadClass[fontsize=12pt,english,numbers=noenddot,captions=tableheading,captions=nooneline]{scrartcl}
 % pointlessnumbers = do not add final dot after ordinary section numbers
 % tablecaptionabove = use \captionabove for captions above rather than below tables
 % noonelinecaption = do not treat one-line captions differently
@@ -121,7 +125,7 @@
 }
 % to get endnotes with superscripts, use \printendnotes[superscriptednotes]
 
-% \RequirePackage{econtex} % Removed 20170801 because won't work when invoked from nonroot paths
+% \RequirePackage{handout} % Removed 20170801 because won't work when invoked from nonroot paths
 % Contents of the file are pasted in below
 
 % ---------------Custom Definitions--------------
@@ -166,7 +170,7 @@
 \RequirePackage{url}
 \def\UrlFont{\ttfamily}
 
-\usepackage[econtex]{optional} % Enable the control of compilation using options passed on startup
+\usepackage[handout]{optional} % Enable the control of compilation using options passed on startup
 \opt{EndFloats}{\RequirePackage[noheads,nolists,tablesfirst,nomarkers]{endfloat}}
 
 % page format, margins if PrintGeom option is invoked
@@ -194,7 +198,7 @@
 \setkomafont{subsubsection}{\normalfont \itshape}
 
 % citations and bibliography
-\RequirePackage[authoryear]{natbib}
+%\RequirePackage[authoryear]{natbib}
 \AtBeginDocument{\renewcommand{\refname}{References}
   \renewcommand\@makefnmark
   {\mbox{\textsuperscript{\tiny\@thefnmark}}} % Restore footnote defn after titlepage redefines it
@@ -244,7 +248,7 @@
 
 
 \newcommand{\maketitleWithForcedDate}[1]{
-  \ClassWarningNoLine{econtex}{\protect\maketitleWithForcedDate{} is deprecated.  To set a date different from the current one, just use the \protect\date{(string desired to signify paper date)}}
+  \ClassWarningNoLine{handout}{\protect\maketitleWithForcedDate{} is deprecated.  To set a date different from the current one, just use the \protect\date{(string desired to signify paper date)}}
 
   \ifthenelse{\equal{\theIncludeTitlePage}{1}}{
     \let\footnotesize\scriptsize
@@ -296,7 +300,7 @@
     \fi
     \vspace*{0mm}
     \ifthenelse{ \isundefined\@keywords }{
-      \ClassWarningNoLine{econtex}{No keywords specified.
+      \ClassWarningNoLine{handout}{No keywords specified.
         Please use the command \protect\keywords}
     }{
     }
@@ -306,7 +310,7 @@
     \begin{Description}
     \item[\textbf{Keywords~}] \@keywords
       \ifthenelse{ \isundefined\@jelclass }{
-        \ClassWarningNoLine{econtex}{No JEL classification specified.
+        \ClassWarningNoLine{handout}{No JEL classification specified.
           Please use the command \protect\jelclass}
       }{
       \item[\textbf{JEL codes~}] \@jelclass
@@ -347,9 +351,9 @@
 
 \RequirePackage[multiple]{footmisc}
 \RequirePackage{manyfoot}
-\RequirePackage{perpage} \DefineFNsymbols{blank}[text]{{} {} {} {} {}} \setfnsymbol{blank} \DeclareNewFootnote{B}[fnsymbol] \MakePerPage{footnoteB} \renewcommand{\thanks}{\footnoteB} \newcommand{\thanksFooter}{\footnoteB}
+%\RequirePackage{perpage} \DefineFNsymbols{blank}[text]{{} {} {} {} {}} \setfnsymbol{blank} \DeclareNewFootnote{B}[fnsymbol] \MakePerPage{footnoteB} \renewcommand{\thanks}{\footnoteB} \newcommand{\thanksFooter}{\footnoteB}
 
-% 20170126: perpage package conflicts with something else so is removed in econtexMake.sh
+% 20170126: perpage package conflicts with something else so is removed in handoutMake.sh
 
 \hfuzz2pt % Don't bother to report over-full boxes if over-edge is < 2pt
 

@@ -1,60 +1,89 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*-     # Configure emacs auctex viewer
 \input{./econtexRoot.texinput} % Set paths (like, \LaTeXInputs) to find resources
-\newcommand{\firstname}{William}
-\newcommand{\lastname}{Du}
 % Document has title page and table of contents and header:
 \documentclass[titlepage, headings=optiontotocandhead]{\econtex} % \econtex: see ./econtexRoot
 
-% Keyname for paper (optional)
+
+% Student info
+\newcommand{\firstname}{William}
+\newcommand{\lastname}{Du}
+\newcommand{\phdyear}{5th}
+
+% name of this document
 \newcommand{\texname}{Letter}
 
 % Standard useful packages for economics
 \usepackage{\econtexSetup} % Gets, configures often-used packages
 
-% Definitions unique to this paper (`\texname` defined above)
-\usepackage{\LaTeXInputs/\texname} % processes \texname.sty
+% Definitions unique to this document
+\IfFileExists{\LaTeXInputs/local.sty}{
+  \usepackage{\LaTeXInputs/local} % processes local.sty
+  }{}
 
 % Custom author (year) bib style
 \bibliographystyle{\econtexBibStyle} 
 
 \begin{document}
 
-\noindent
-\vspace*{9mm}
-\small
+% If logo file exists, incorporate it
+\newcommand{\jhulogo}{/Volumes/Sync/Dropbox/Bib/Raw/ByCiteKey/university.logo.small.vertical.blue-cropped.jpeg}
+
+\IfFileExists{\jhulogo}{
+  \centerline{\includegraphics[height=1.0in]{\jhulogo}}
+  }{}
 
 \begin{flushright}
-\vspace{11mm} \today
+\today
 \end{flushright}
 
 \vspace*{-1mm}
-Christopher D. Carroll
+\noindent Christopher D. Carroll (\href{https://orcid.org/0000-0003-3732-9312}{ORCID},~\href{https://scholar.google.com/citations?user=JY7jfgsAAAAJ}{Google Scholar})
 
-Professor of Economics
+\noindent Professor of Economics
 
-Johns Hopkins University
+\noindent Johns Hopkins University
 
 \oddsidemargin 0in \textwidth 6.4in \topmargin 0in \textheight 8.8in
 \pagestyle{empty}
 \noindent
-\vspace*{9mm}
+%\vspace*{9mm}
 \small
 
 
 \begin{center}
   \normalsize \noindent {Recommendation of {\firstname} {\lastname} for}
+\centerline{\input{./Name-Of-Program.texinput}} \medskip\medskip
 \end{center}
 
-\centerline{\input{./Name-Of-Program}} \medskip\medskip
-
-{\firstname}~{\lastname} is a PhD student of mine at Johns Hopkins University, who is applying to you for a summer internship.  
+% Replace LinkedIn profile with something better if it exists
+This recommendation letter is for \href{https://www.linkedin.com/in/william-du-550837197}{{\firstname}~{\lastname}}, a {\phdyear}-year student in the PhD program at Johns Hopkins University.
 
 % Tell subfiles they are not being compiled as standalone files
 \input{\LaTeXInputs/econtex_notinsubfile} % instead are part of a larger document
 
+% Private things CDC will say in introduction
+\IfFileExists{../PhD-RecLetters-private/saynicethings/Intro.tex}{%
+  \input{../PhD-RecLetters-private/saynicethings/Intro}
+}{\\ no nice things}
+
 \subfile{./Subfiles/Intro}
 \subfile{./Subfiles/JMP}
 \subfile{./Subfiles/Conclusion}
+
+% Private things CDC will say in conclusion
+\IfFileExists{../PhD-RecLetters-private/saynicethings/Conclusion.tex}{%
+  \input{../PhD-RecLetters-private/saynicethings/Conclusion}
+}{}
+
+\medskip\medskip\medskip
+
+Sincerely,
+
+\phantom{.}\\ 
+
+Chris Carroll
+
+
 
 % Make the bibliography
 \input{\LaTeXInputs/bibliography_blend}

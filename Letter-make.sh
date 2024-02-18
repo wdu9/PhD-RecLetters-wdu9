@@ -1,22 +1,12 @@
 #!/bin/bash
 
-pdflatex Letter.tex
-bibtex   Letter.tex
-pdflatex Letter.tex
-pdflatex Letter.tex
+latexmk -C
+latexmk Letter 
 
 cd Subfiles
 
-for f in *.tex; do
-    pdflatex $f
-    bibtex $f
-    pdflatex $f
-    pdflatex $f
-done
+./Subfiles.sh
 
 cd ..
 
-latexmk -C
-latexmk Letter
 latexmk -c
-
