@@ -1,5 +1,3 @@
-Draft emails for me to cut and paste
-
 To: Christopher Huckfeldt <<a href="mailto:chris.huckfeldt@frb.gov" target="_blank">chris.huckfeldt@frb.gov</a>>
 
 Dear Christopher,
