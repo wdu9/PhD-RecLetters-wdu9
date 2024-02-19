@@ -1,5 +1,3 @@
-Draft emails for me to cut and paste
-
 To: Bence Bardoczy <<a href="mailto:bence.a.bardoczy@frb.gov" target="_blank">bence.a.bardoczy@frb.gov</a>>
 
 Dear Bence,
