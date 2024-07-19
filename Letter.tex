@@ -3,11 +3,12 @@
 % Document has title page and table of contents and header:
 \documentclass[titlepage, headings=optiontotocandhead]{\econtex} % \econtex: see ./econtexRoot
 
+\usepackage{subfiles}
 
 % Student info
 \newcommand{\firstname}{William}
 \newcommand{\lastname}{Du}
-\newcommand{\phdyear}{5th}
+\newcommand{\phdyear}{rising 6th}
 
 % name of this document
 \newcommand{\texname}{Letter}
@@ -26,7 +27,7 @@
 \begin{document}
 
 % If logo file exists, incorporate it
-\newcommand{\jhulogo}{/Volumes/Sync/Dropbox/Bib/Raw/ByCiteKey/university.logo.small.vertical.blue-cropped.jpeg}
+\newcommand{\jhulogo}{/Users/Shared/Dropbox/Bib/Raw/ByCiteKey/university.logo.small.vertical.blue-cropped.jpeg}
 
 \IfFileExists{\jhulogo}{
   \centerline{\includegraphics[height=1.0in]{\jhulogo}}
@@ -86,7 +87,7 @@ Chris Carroll
 
 
 % Make the bibliography
-\input{\LaTeXInputs/bibliography_blend}
+%\input{\LaTeXInputs/bibliography_blend}
 
 \end{document}
 
