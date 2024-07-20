@@ -10,7 +10,5 @@ If you happened to attend my talk at the R&S 100 conference last fall, you will 
 
 His other main project right now involves a HANK-Housing model he had built during his internship at the Bank of England last year ([Slides](https://github.com/wdu9/HANK_Housing_Block/blob/main/HANK_Housing_Slides%20slides.pdf)).
 
-PS. Hope to see you at my visit to the Fed on Weds!
-
-PPS. I'm attaching the letter I wrote for Will for the dissertation internship application.
+PPS. I'm attaching the letter I wrote for Will for the dissertation fellowship application.
 
