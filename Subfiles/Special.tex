@@ -1,3 +1,6 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/Letter]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/Letter}} % Get xrefs from main file; only works if main file has already been compiled
 \begin{document}
 The skills I possess that are relevant to Bates White:
 \vspace{.2cm}
@@ -9,4 +12,12 @@ The first is his expertise in developing dynamic micro structural labor models. 
 His experience, however is not only limited to models of the labor market. During his time as Ph.D. intern at the Bank of England, he collaborated with research economists at the Bank of England to build a dynamic discrete choice model of housing. 
 
 The second is his ability to extract valuable insights from large micro panel datasets. Will has estimated labor transition probabilities from Current Population Survey (CPS). The CPS is a monthly survey that contains the labor status of 50,000 households. Using these monthly surveys, he has computed the probability of losing and finding a job across 30 years. To do so, he had to match observations from month to month, for over 30 years, to track the number of households moving from employment to unemployment and vice versa. He has also utilized the Survey of Consumer Expectations to computer the job finding expectation of households across various demographics such as education, income, and employment status. Finally, he has also estimated the Lorenz Curve for wealth using the Survey of Consumer Finances. 
-\end{document}
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+  \end{document} \endinput
+}
