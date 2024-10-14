@@ -27,7 +27,7 @@
 \begin{document}
 
 % If logo file exists, incorporate it
-\newcommand{\jhulogo}{/Users/Shared/Dropbox/Bib/Raw/ByCiteKey/university.logo.small.vertical.blue-cropped.jpeg}
+\newcommand{\jhulogo}{/Volumes/Sync/Dropbox/Bib/Raw/ByCiteKey/university.logo.small.vertical.blue.jpg}
 
 \IfFileExists{\jhulogo}{
   \centerline{\includegraphics[height=1.0in]{\jhulogo}}
@@ -66,15 +66,15 @@ This recommendation letter is for \href{https://www.linkedin.com/in/william-du-5
 \IfFileExists{../PhD-RecLetters-private/saynicethings/Intro.tex}{%
   \input{../PhD-RecLetters-private/saynicethings/Intro}
 }{\\ no nice things}
-
 \subfile{./Subfiles/Intro}
 \IfFileExists{../PhD-RecLetters-private/saynicethings/Special.tex}{%
   \input{../PhD-RecLetters-private/saynicethings/Special}
 }{\\ no special things}
-
+\IfFileExists{./Subfiles/Special}{%
+  \subfile{./Subfiles/Special}
+}{\\ no special things}
 \subfile{./Subfiles/JMP}
 \subfile{./Subfiles/Conclusion}
-
 % Private things CDC will say in conclusion
 \IfFileExists{../PhD-RecLetters-private/saynicethings/Conclusion.tex}{%
   \input{../PhD-RecLetters-private/saynicethings/Conclusion}
@@ -91,7 +91,7 @@ Chris Carroll
 
 \pagebreak
 % Make the bibliography
-\input{\LaTeXInputs/bibliography_blend}
+%\input{\LaTeXInputs/bibliography_blend}
 
 \end{document}
 
