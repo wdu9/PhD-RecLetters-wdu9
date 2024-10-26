@@ -1,0 +1,20 @@
+% -*- mode: LaTeX; TeX-PDF-mode: t; -*- # Tell emacs file type (for syntax coloring)
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/Letter]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/Letter}} % Get xrefs from main file; only works if main file has already been compiled
+
+\begin{document}
+\notinsubfile{\renewcommand{\econtexRoot}{.}}
+
+% Details on second chapter
+
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+  \end{document}	\endinput
+}
+
