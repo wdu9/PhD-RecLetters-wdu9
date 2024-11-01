@@ -1,10 +1,11 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*-     # Configure emacs auctex viewer
-\input{./econtexRoot.texinput} % Set paths (like, \LaTeXInputs) to find resources
+%\input{./econtexRoot.texinput} % Set paths (like, \LaTeXInputs) to find resources
 % Document has title page and table of contents and header:
-\documentclass[titlepage, headings=optiontotocandhead]{\econtex} % \econtex: see ./econtexRoot
-
+\documentclass[titlepage, headings=optiontotocandhead]{article} % \econtex: see ./econtexRoot
+\usepackage{ifthen}
+\usepackage{hyperref}
 \usepackage{subfiles}
-
+\usepackage{natbib}
 % Student info
 \newcommand{\firstname}{William}
 \newcommand{\lastname}{Du}
@@ -14,24 +15,22 @@
 \newcommand{\texname}{Letter}
 
 % Standard useful packages for economics
-\usepackage{\econtexSetup} % Gets, configures often-used packages
+%\usepackage{\econtexSetup} % Gets, configures often-used packages
 
 % Definitions unique to this document
-\IfFileExists{\LaTeXInputs/local.sty}{
-  \usepackage{\LaTeXInputs/local} % processes local.sty
-  }{}
+%\IfFileExists{\LaTeXInputs/local.sty}{
+%  \usepackage{\LaTeXInputs/local} % processes local.sty
 
 % Custom author (year) bib style
-\bibliographystyle{\econtexBibStyle} 
+%\bibliographystyle{plainnat} 
 
 \begin{document}
 
 % If logo file exists, incorporate it
-\newcommand{\jhulogo}{/Users/Shared/Dropbox/Bib/Raw/ByCiteKey/university.logo.small.vertical.blue-cropped.jpeg}
+%\newcommand{\jhulogo}{/Users/Shared/Dropbox/Bib/Raw/ByCiteKey/university.logo.small.vertical.blue-cropped.jpeg}
 
-\IfFileExists{\jhulogo}{
-  \centerline{\includegraphics[height=1.0in]{\jhulogo}}
-  }{}
+%\IfFileExists{\jhulogo}{
+ % \centerline{\includegraphics[height=1.0in]{\jhulogo}}
 
 \begin{flushright}
 2024-10-19
@@ -60,12 +59,11 @@
 This recommendation letter is for \href{https://www.william-du.com}{\textbf{\firstname}~\textbf{\lastname}}, a student in the PhD program at Johns Hopkins University who is on the job market this fall.
 
 % Tell subfiles they are not being compiled as standalone files
-\input{\LaTeXInputs/econtex_notinsubfile} % instead are part of a larger document
+%\input{\LaTeXInputs/econtex_notinsubfile} % instead are part of a larger document
 
 % Private things CDC will say in introduction
-\IfFileExists{../PhD-RecLetters-private/saynicethings/Intro.tex}{%
-  \input{../PhD-RecLetters-private/saynicethings/Intro}
-}{\\ no nice things}
+%\IfFileExists{../PhD-RecLetters-private/saynicethings/Intro.tex}{%
+ % \input{../PhD-RecLetters-private/saynicethings/Intro}
 
 \subfile{./Subfiles/Intro}
 \subfile{./Subfiles/JMP}
@@ -76,9 +74,8 @@ This recommendation letter is for \href{https://www.william-du.com}{\textbf{\fir
 
 
 % Private things CDC will say in conclusion
-\IfFileExists{../PhD-RecLetters-private/saynicethings/Conclusion.tex}{%
-  \input{../PhD-RecLetters-private/saynicethings/Conclusion}
-}{}
+%\IfFileExists{../PhD-RecLetters-private/saynicethings/Conclusion.tex}{%
+ % \input{../PhD-RecLetters-private/saynicethings/Conclusion}
 
 \medskip\medskip\medskip
 
