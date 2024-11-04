@@ -1,28 +1,27 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*-     # Configure emacs auctex viewer
+\input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
 \input{./econtexRoot.texinput} % Set paths (like, \LaTeXInputs) to find resources
-% Document has title page and table of contents and header:
-\documentclass[titlepage, headings=optiontotocandhead]{\econtex} % \econtex: see ./econtexRoot
+\documentclass{econtex} % \econtex: see ./econtexRoot
 
+\usepackage{ifthen}
+\usepackage{hyperref}
 \usepackage{subfiles}
+\usepackage{natbib}
+\usepackage{@local/econtex_onlyinsubfile}
 
 % Student info
 \newcommand{\firstname}{William}
 \newcommand{\lastname}{Du}
 \newcommand{\phdyear}{rising 6th}
 
-% name of this document
-\newcommand{\texname}{Letter}
-
 % Standard useful packages for economics
-\usepackage{\econtexSetup} % Gets, configures often-used packages
+%\usepackage{\econtexSetup} % Gets, configures often-used packages
 
 % Definitions unique to this document
-\IfFileExists{\LaTeXInputs/local.sty}{
-  \usepackage{\LaTeXInputs/local} % processes local.sty
-  }{}
+%\IfFileExists{\LaTeXInputs/local.sty}{
+%  \usepackage{\LaTeXInputs/local} % processes local.sty
 
-% Custom author (year) bib style
-\bibliographystyle{\econtexBibStyle} 
+\bibliographystyle{econark} 
 
 \begin{document}
 
@@ -30,11 +29,10 @@
 \newcommand{\jhulogo}{/Users/Shared/Dropbox/Bib/Raw/ByCiteKey/university.logo.small.vertical.blue-cropped.jpeg}
 
 \IfFileExists{\jhulogo}{
-  \centerline{\includegraphics[height=1.0in]{\jhulogo}}
-  }{}
-
+\centerline{\includegraphics[height=1.0in]{\jhulogo}}
+}
 \begin{flushright}
-2020-10-19
+2024-11-01
 \end{flushright}
 
 \vspace*{-1mm}
@@ -57,24 +55,26 @@
 % \end{center}
 % Replace LinkedIn profile with something better if it exists
 \medskip\medskip
-This recommendation letter is for \href{https://www.linkedin.com/in/william-du-550837197}{\textbf{\firstname}~\textbf{\lastname}}, a student in the PhD program at Johns Hopkins University who is on the job market this fall.
+This recommendation letter is for \href{https://www.william-du.com}{\textbf{\firstname}~\textbf{\lastname}}, a student in the PhD program at Johns Hopkins University who is on the job market this fall.
 
 % Tell subfiles they are not being compiled as standalone files
-\input{\LaTeXInputs/econtex_notinsubfile} % instead are part of a larger document
+%\input{\LaTeXInputs/econtex_notinsubfile} % instead are part of a larger document
 
 % Private things CDC will say in introduction
-\IfFileExists{../PhD-RecLetters-private/saynicethings/Intro.tex}{%
-  \input{../PhD-RecLetters-private/saynicethings/Intro}
-}{\\ no nice things}
+%\IfFileExists{../PhD-RecLetters-private/saynicethings/Intro.tex}{%
+ % \input{../PhD-RecLetters-private/saynicethings/Intro}
 
 \subfile{./Subfiles/Intro}
 \subfile{./Subfiles/JMP}
+\subfile{./Subfiles/Second-Chapter}
+\subfile{./Subfiles/Future-Research-Agenda}
+%\subfile{./Subfiles/Computational-Skills-and-HARK}
 \subfile{./Subfiles/Conclusion}
+
 
 % Private things CDC will say in conclusion
 \IfFileExists{../PhD-RecLetters-private/saynicethings/Conclusion.tex}{%
-  \input{../PhD-RecLetters-private/saynicethings/Conclusion}
-}{}
+  \input{../PhD-RecLetters-private/saynicethings/Conclusion}}
 
 \medskip\medskip\medskip
 
