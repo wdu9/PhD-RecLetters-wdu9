@@ -2,17 +2,24 @@
 \input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
 \input{./econtexRoot.texinput} % Set paths (like, \LaTeXInputs) to find resources
 \documentclass{econtex} % \econtex: see ./econtexRoot
-
+\usepackage{bibentry}
 \usepackage{ifthen}
 \usepackage{hyperref}
 \usepackage{subfiles}
 \usepackage{natbib}
-\usepackage{@local/econtex_onlyinsubfile}
+\usepackage{econark-ifsubfile}
+%\usepackage{econark-bibfilesfind}
+\usepackage{econark-collectbibs}
+\usepackage{graphicx}
 
+\provideboolean{Web}\setboolean{Web}{false}
+\providecommand{\saynicethings}{}\renewcommand{\saynicethings}{../PhD-RecLetters-private/saynicethings}
+\providecommand{\texname}{Letter}
 % Student info
 \newcommand{\firstname}{William}
 \newcommand{\lastname}{Du}
 \newcommand{\phdyear}{rising 6th}
+
 
 % Standard useful packages for economics
 %\usepackage{\econtexSetup} % Gets, configures often-used packages
@@ -26,13 +33,14 @@
 \begin{document}
 
 % If logo file exists, incorporate it
-%\newcommand{\jhulogo}{/Users/Shared/Dropbox/Bib/Raw/ByCiteKey/university.logo.small.vertical.blue-cropped.jpeg}
+\newcommand{\jhulogo}{/Users/Shared/Dropbox/Bib/Raw/ByCiteKey/university.logo.small.vertical.blue-cropped.jpeg}
 
 \IfFileExists{\jhulogo}{
 \centerline{\includegraphics[height=1.0in]{\jhulogo}}
-}
+}{}
+
 \begin{flushright}
-2024-11-01
+2024-11-08
 \end{flushright}
 
 \vspace*{-1mm}
@@ -46,7 +54,6 @@
 \pagestyle{empty}
 \noindent
 %\vspace*{9mm}
-\small
 
 
 % \begin{center}
@@ -61,16 +68,16 @@ This recommendation letter is for \href{https://www.william-du.com}{\textbf{\fir
 %\input{\LaTeXInputs/econtex_notinsubfile} % instead are part of a larger document
 
 % Private things CDC will say in introduction
-%\IfFileExists{../PhD-RecLetters-private/saynicethings/Intro.tex}{%
- % \input{../PhD-RecLetters-private/saynicethings/Intro}
+\IfFileExists{\saynicethings/Intro.tex}{\input{\saynicethings/Intro}}{}
 
 \subfile{./Subfiles/Intro}
 \subfile{./Subfiles/JMP}
+\IfFileExists{\saynicethings/Special.tex}{\input{\saynicethings/Special}}{}
 \subfile{./Subfiles/Second-Chapter}
 \subfile{./Subfiles/Future-Research-Agenda}
-%\subfile{./Subfiles/Computational-Skills-and-HARK}
+\subfile{./Subfiles/Computational-Skills-and-HARK}
+% Private things CDC will say in introduction
 \subfile{./Subfiles/Conclusion}
-
 
 % Private things CDC will say in conclusion
 \IfFileExists{../PhD-RecLetters-private/saynicethings/Conclusion.tex}{%
@@ -79,17 +86,32 @@ This recommendation letter is for \href{https://www.william-du.com}{\textbf{\fir
 \medskip\medskip\medskip
 
 \noindent Sincerely,
+\medskip
 
-\phantom{.}\\ 
+\IfFileExists{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature.pdf}{\includegraphics[height=0.5in]{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature}}
+\\
 
+\medskip\medskip
 \noindent Chris Carroll
 
+\pagebreak
+\providecommand{\bibfiles}{}\renewcommand{\bibfiles}{}\econarkcollectbibs{\econtexRoot/\texname}
 
+% suppress printing of bibliography
+\nobibliography{\bibfiles}\sloppy\end{document}\endinput
 \pagebreak
 % Make the bibliography
-%\input{\LaTeXInputs/bibliography_blend}
 
-\end{document}
+\providecommand{\bibfiles}{}\renewcommand{\bibfiles}{}\econarkcollectbibs{\econtexRoot/\texname}\bibliography{\bibfiles}\sloppy\end{document}\endinput
+
+
+\bibfilesfound{\texname}
+
+\end{document}\endinput
+
+\bibliography{\bibfilesfound}
+%\econarkcollectbibs{\econtexRoot/\texname}\bibliography{\bibfiles}\sloppy\end{document}\endinput
+
 
 % Lines below help configure AucTeX if that is your editor
 % 
@@ -196,7 +218,14 @@ This recommendation letter is for \href{https://www.william-du.com}{\textbf{\fir
 
 \noindent Sincerely,
 
-\phantom{.}\\ 
+\IfFileExists{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature.pdf}{
+  exists
+}
+{fails}
+
+%  \includegraphics[height=0.5in]{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature.pdf}{}
+
+\medskip\medskip\medskip
 
 \noindent Chris Carroll
 
