@@ -12,7 +12,9 @@ Will's [job market paper](https://github.com/wdu9/JMP/blob/main/JMPDraft.pdf) sh
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %COMMENT
-% I don't conduct a Paycheck Protection Program(PPP) counterfactual in which I show the latter. However, I am emphasizing that combining Gertler et al (2022)'s result and my quantitative result that temporary layoffs were a key factor in determining why the recovery returned to pre-2020 trend *suggests* that fiscal policy( the PPP) likely prevented scarring. I plan to write a new paper where I embed Gertler et al (2022)'s search and matching micro foundations into my HANK and SAM to quantitatively assess the extent the PPP reduced scarring. I think this point on the PPP and how it prevented macro scarring is especially important because Byron Lutz (one of the recipients of this email) has a paper on how the PPP affected employment. I think he would find this point interesting, and be more interested in hiring someone, and maybe working with someone, who is eager to pursue this. 
+% I don't conduct a Paycheck Protection Program(PPP) counterfactual in which I show the latter. However, I am emphasizing that combining Gertler et al (2022)'s result and my quantitative result that temporary layoffs were a key factor in determining why the recovery returned to pre-2020 trend *suggests* that fiscal policy( the PPP) likely prevented scarring. I plan to write a new paper where I embed Gertler et al (2022)'s search and matching micro foundations into my HANK and SAM to quantitatively assess the extent the PPP reduced scarring. 
+
+%This point on the PPP and how it prevented macro scarring is especially important because Byron Lutz (one of the recipients of this email) has a paper on how the PPP affected employment. I think he would find this point interesting.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
