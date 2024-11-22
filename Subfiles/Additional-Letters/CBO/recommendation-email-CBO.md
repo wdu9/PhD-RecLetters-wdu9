@@ -28,7 +28,7 @@ As further evidence of Will's ability, Will has contributed extensively to [HARK
 PPS. I'm attaching the letter I wrote for Will for the application.
 
 
-% link staff lists
+% link to staff lists
 https://www.cbo.gov/about/organization-and-staffing#mad % hyperlink to staff lists. Need to scroll down to 'Macroeconomic Analysis Division'. In particular, look at the economists in the 'fiscal policy studies unit'. This is the unit that is hiring.
 
 % link to the posting is below
