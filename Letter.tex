@@ -8,8 +8,8 @@
 \usepackage{subfiles}
 \usepackage{natbib}
 \usepackage{econark-ifsubfile}
-%\usepackage{econark-bibfilesfind}
-\usepackage{econark-collectbibs}
+\usepackage{econark-bibfilesfind}
+%\usepackage{econark-collectbibs}
 \usepackage{graphicx}
 
 \provideboolean{Web}\setboolean{Web}{false}
@@ -86,18 +86,21 @@ This recommendation letter is for \href{https://www.william-du.com}{\textbf{\fir
 \medskip\medskip\medskip
 
 \noindent Sincerely,
-\medskip
-
-\IfFileExists{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature.pdf}{\includegraphics[height=0.5in]{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature}}
-
 \medskip\medskip
+
+%\mbox{
+\noindent \IfFileExists{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature.pdf}{\includegraphics[height=0.5in]{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature}}{}
+%}
+
+\medskip\medskip\medskip\medskip
 \noindent Chris Carroll
 
 \pagebreak
-\providecommand{\bibfiles}{}\renewcommand{\bibfiles}{}\econarkcollectbibs{\econtexRoot/\texname}
+
+\bibfilesfind{Letter}
 
 % suppress printing of bibliography
-\nobibliography{\bibfiles}\sloppy\end{document}\endinput
+\nobibliography{\bibfilesfound}\sloppy\end{document}\endinput
 \pagebreak
 % Make the bibliography
 
@@ -205,7 +208,7 @@ This recommendation letter is for \href{https://www.william-du.com}{\textbf{\fir
 \subfile{./Subfiles/JMP}
 \subfile{./Subfiles/Second-Chapter}
 \subfile{./Subfiles/Future-Research-Agenda}
-%\subfile{./Subfiles/Computational-Skills-and-HARK}
+\subfile{./Subfiles/Computational-Skills-and-HARK}
 \subfile{./Subfiles/Conclusion}
 
 
@@ -216,17 +219,12 @@ This recommendation letter is for \href{https://www.william-du.com}{\textbf{\fir
 \medskip\medskip\medskip
 
 \noindent Sincerely,
-
+\mbox{
 \IfFileExists{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature.pdf}{
-  exists
+\includegraphics[height=0.5in]{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature.pdf}
+}{}
 }
-{fails}
-
-%  \includegraphics[height=0.5in]{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature.pdf}{}
-
-\medskip\medskip\medskip
-
-\noindent Chris Carroll
+%  
 
 
 \pagebreak

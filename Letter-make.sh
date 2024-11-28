@@ -10,3 +10,4 @@ cd Subfiles
 cd ..
 
 latexmk -c
+pdftotext Letter.pdf ../PhD-RecLetters-private/Letter.pdftotext
