@@ -1,0 +1,257 @@
+% -*- mode: LaTeX; TeX-PDF-mode: t; -*-     # Configure emacs auctex viewer
+\input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
+\input{./econtexRoot.texinput} % Set paths (like, \LaTeXInputs) to find resources
+\documentclass{econark} % \econtex: see ./econtexRoot
+\usepackage{bibentry}
+\usepackage{ifthen}
+\usepackage{hyperref}
+\usepackage{subfiles}
+\usepackage{natbib}
+\usepackage{econark-ifsubfile}
+\usepackage{econark-bibfilesfind}
+%\usepackage{econark-collectbibs}
+\usepackage{graphicx}
+
+\provideboolean{Web}\setboolean{Web}{false}
+\providecommand{\saynicethings}{}\renewcommand{\saynicethings}{../PhD-RecLetters-private/saynicethings}
+\providecommand{\texname}{Letter}
+% Student info
+\newcommand{\firstname}{William}
+\newcommand{\lastname}{Du}
+\newcommand{\phdyear}{rising 6th}
+
+
+% Standard useful packages for economics
+%\usepackage{\econtexSetup} % Gets, configures often-used packages
+
+% Definitions unique to this document
+%\IfFileExists{\LaTeXInputs/local.sty}{
+%  \usepackage{\LaTeXInputs/local} % processes local.sty
+
+\bibliographystyle{econark} 
+
+\begin{document}
+
+% If logo file exists, incorporate it
+\newcommand{\jhulogo}{/Users/Shared/Dropbox/Bib/Raw/ByCiteKey/university.logo.small.vertical.blue-cropped.jpeg}
+
+\IfFileExists{\jhulogo}{
+\centerline{\includegraphics[height=1.0in]{\jhulogo}}
+}{}
+
+\begin{flushright}
+2024-11-08
+\end{flushright}
+
+\vspace*{-1mm}
+\noindent Christopher D. Carroll (\href{https://orcid.org/0000-0003-3732-9312}{ORCID},~\href{https://scholar.google.com/citations?user=JY7jfgsAAAAJ}{Google Scholar})
+
+\noindent Professor of Economics
+
+\noindent Johns Hopkins University
+
+\oddsidemargin 0in \textwidth 6.4in \topmargin 0in \textheight 8.8in
+\pagestyle{empty}
+\noindent
+%\vspace*{9mm}
+
+
+% \begin{center}
+%   \normalsize \noindent {Recommendation of {\firstname} {\lastname} for}
+% \centerline{\input{./Name-Of-Program.texinput}} \medskip\medskip
+% \end{center}
+% Replace LinkedIn profile with something better if it exists
+\medskip\medskip
+This recommendation letter is for \href{https://www.william-du.com}{\textbf{\firstname}~\textbf{\lastname}}, a student in the PhD program at Johns Hopkins University who is on the job market this fall.
+
+% Tell subfiles they are not being compiled as standalone files
+%\input{\LaTeXInputs/econtex_notinsubfile} % instead are part of a larger document
+
+% Private things CDC will say in introduction
+\IfFileExists{\saynicethings/Intro.tex}{\input{\saynicethings/Intro}}{}
+
+\subfile{./Subfiles/Intro}
+\subfile{./Subfiles/JMP}
+\IfFileExists{\saynicethings/Special.tex}{\input{\saynicethings/Special}}{}
+\subfile{./Subfiles/Second-Chapter}
+\subfile{./Subfiles/Future-Research-Agenda}
+\subfile{./Subfiles/Computational-Skills-and-HARK}
+% Private things CDC will say in introduction
+\subfile{./Subfiles/Conclusion}
+
+% Private things CDC will say in conclusion
+\IfFileExists{../PhD-RecLetters-private/saynicethings/Conclusion.tex}{%
+  \input{../PhD-RecLetters-private/saynicethings/Conclusion}}
+
+\medskip\medskip\medskip
+
+\noindent Sincerely,
+\medskip\medskip
+
+%\mbox{
+\noindent \IfFileExists{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature.pdf}{\includegraphics[height=0.5in]{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature}}{}
+%}
+
+\medskip\medskip\medskip\medskip
+\noindent Chris Carroll
+
+\pagebreak
+
+\bibfilesfind{Letter}
+
+% suppress printing of bibliography
+\nobibliography{\bibfilesfound}\sloppy\end{document}\endinput
+\pagebreak
+% Make the bibliography
+
+\providecommand{\bibfiles}{}\renewcommand{\bibfiles}{}\econarkcollectbibs{\econtexRoot/\texname}\bibliography{\bibfiles}\sloppy\end{document}\endinput
+
+
+\bibfilesfound{\texname}
+
+\end{document}\endinput
+
+\bibliography{\bibfilesfound}
+%\econarkcollectbibs{\econtexRoot/\texname}\bibliography{\bibfiles}\sloppy\end{document}\endinput
+
+
+% Lines below help configure AucTeX if that is your editor
+% 
+% Local Variables:
+% TeX-master-file: t
+% eval: (setq TeX-command-list  (assq-delete-all (car (assoc "BibTeX" TeX-command-list)) TeX-command-list))
+% eval: (setq TeX-command-list  (assq-delete-all (car (assoc "Biber"  TeX-command-list)) TeX-command-list))
+% eval: (setq TeX-command-list  (remove '("BibTeX" "%(bibtex) %s"    TeX-run-BibTeX nil t :help "Run BibTeX") TeX-command-list))
+% eval: (setq TeX-command-list  (remove '("BibTeX"    "bibtex %s"    TeX-run-BibTeX nil (plain-tex-mode latex-mode doctex-mode ams-tex-mode texinfo-mode context-mode)  :help "Run BibTeX") TeX-command-list))
+% eval: (setq TeX-command-list  (remove '("BibTeX" "bibtex %s"    TeX-run-BibTeX nil t :help "Run BibTeX") TeX-command-list))
+% eval: (add-to-list 'TeX-command-list '("BibTeX" "bibtex %s" TeX-run-BibTeX nil t                                                                              :help "Run BibTeX") t)
+% eval:  (add-to-list 'TeX-command-list '("BibTeX" "bibtex %s" TeX-run-BibTeX nil (plain-tex-mode latex-mode doctex-mode ams-tex-mode texinfo-mode context-mode) :help "Run BibTeX") t)
+% TeX-PDF-mode: t
+% TeX-file-line-error: t
+% TeX-debug-warnings: t
+% LaTeX-command-style: (("" "%(PDF)%(latex) %(file-line-error) %(extraopts) -output-directory=. %S%(PDFout)"))
+% TeX-source-correlate-mode: t
+% TeX-parse-self: t
+% TeX-parse-all-errors: t
+% eval: (cond ((string-equal system-type "darwin") (progn (setq TeX-view-program-list '(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline -b %n %o %b"))))))
+% eval: (cond ((string-equal system-type "gnu/linux") (progn (setq TeX-view-program-list '(("Evince" "evince --page-index=%(outpage) %o"))))))
+% eval: (cond ((string-equal system-type "gnu/linux") (progn (setq TeX-view-program-selection '((output-pdf "Evince"))))))
+% End:
+
+% -*- mode: LaTeX; TeX-PDF-mode: t; -*-     # Configure emacs auctex viewer
+\input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
+\input{./econtexRoot.texinput} % Set paths (like, \LaTeXInputs) to find resources
+\documentclass{econtex} % \econtex: see ./econtexRoot
+
+\usepackage{ifthen}
+\usepackage{hyperref}
+\usepackage{subfiles}
+\usepackage{natbib}
+\usepackage{@local/econtex_onlyinsubfile}
+
+% Student info
+\newcommand{\firstname}{William}
+\newcommand{\lastname}{Du}
+\newcommand{\phdyear}{rising 6th}
+
+% Standard useful packages for economics
+%\usepackage{\econtexSetup} % Gets, configures often-used packages
+
+% Definitions unique to this document
+%\IfFileExists{\LaTeXInputs/local.sty}{
+%  \usepackage{\LaTeXInputs/local} % processes local.sty
+
+\bibliographystyle{econark} 
+
+\begin{document}
+
+% If logo file exists, incorporate it
+\newcommand{\jhulogo}{/Users/Shared/Dropbox/Bib/Raw/ByCiteKey/university.logo.small.vertical.blue-cropped.jpeg}
+
+\IfFileExists{\jhulogo}{
+\centerline{\includegraphics[height=1.0in]{\jhulogo}}
+}
+\begin{flushright}
+2024-11-01
+\end{flushright}
+
+\vspace*{-1mm}
+\noindent Christopher D. Carroll (\href{https://orcid.org/0000-0003-3732-9312}{ORCID},~\href{https://scholar.google.com/citations?user=JY7jfgsAAAAJ}{Google Scholar})
+
+\noindent Professor of Economics
+
+\noindent Johns Hopkins University
+
+\oddsidemargin 0in \textwidth 6.4in \topmargin 0in \textheight 8.8in
+\pagestyle{empty}
+\noindent
+%\vspace*{9mm}
+\small
+
+
+% \begin{center}
+%   \normalsize \noindent {Recommendation of {\firstname} {\lastname} for}
+% \centerline{\input{./Name-Of-Program.texinput}} \medskip\medskip
+% \end{center}
+% Replace LinkedIn profile with something better if it exists
+\medskip\medskip
+This recommendation letter is for \href{https://www.william-du.com}{\textbf{\firstname}~\textbf{\lastname}}, a student in the PhD program at Johns Hopkins University who is on the job market this fall.
+
+% Tell subfiles they are not being compiled as standalone files
+%\input{\LaTeXInputs/econtex_notinsubfile} % instead are part of a larger document
+
+% Private things CDC will say in introduction
+%\IfFileExists{../PhD-RecLetters-private/saynicethings/Intro.tex}{%
+ % \input{../PhD-RecLetters-private/saynicethings/Intro}
+
+\subfile{./Subfiles/Intro}
+\subfile{./Subfiles/JMP}
+\subfile{./Subfiles/Second-Chapter}
+\subfile{./Subfiles/Future-Research-Agenda}
+\subfile{./Subfiles/Computational-Skills-and-HARK}
+\subfile{./Subfiles/Conclusion}
+
+
+% Private things CDC will say in conclusion
+\IfFileExists{../PhD-RecLetters-private/saynicethings/Conclusion.tex}{%
+  \input{../PhD-RecLetters-private/saynicethings/Conclusion}}
+
+\medskip\medskip\medskip
+
+\noindent Sincerely,
+\mbox{
+\IfFileExists{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature.pdf}{
+\includegraphics[height=0.5in]{/Volumes/Data/Personal/Identity/CDCSignatures/CDCSignature.pdf}
+}{}
+}
+%  
+
+
+\pagebreak
+% Make the bibliography
+%\input{\LaTeXInputs/bibliography_blend}
+
+\end{document}
+
+% Lines below help configure AucTeX if that is your editor
+% 
+% Local Variables:
+% TeX-master-file: t
+% eval: (setq TeX-command-list  (assq-delete-all (car (assoc "BibTeX" TeX-command-list)) TeX-command-list))
+% eval: (setq TeX-command-list  (assq-delete-all (car (assoc "Biber"  TeX-command-list)) TeX-command-list))
+% eval: (setq TeX-command-list  (remove '("BibTeX" "%(bibtex) %s"    TeX-run-BibTeX nil t :help "Run BibTeX") TeX-command-list))
+% eval: (setq TeX-command-list  (remove '("BibTeX"    "bibtex %s"    TeX-run-BibTeX nil (plain-tex-mode latex-mode doctex-mode ams-tex-mode texinfo-mode context-mode)  :help "Run BibTeX") TeX-command-list))
+% eval: (setq TeX-command-list  (remove '("BibTeX" "bibtex %s"    TeX-run-BibTeX nil t :help "Run BibTeX") TeX-command-list))
+% eval: (add-to-list 'TeX-command-list '("BibTeX" "bibtex %s" TeX-run-BibTeX nil t                                                                              :help "Run BibTeX") t)
+% eval:  (add-to-list 'TeX-command-list '("BibTeX" "bibtex %s" TeX-run-BibTeX nil (plain-tex-mode latex-mode doctex-mode ams-tex-mode texinfo-mode context-mode) :help "Run BibTeX") t)
+% TeX-PDF-mode: t
+% TeX-file-line-error: t
+% TeX-debug-warnings: t
+% LaTeX-command-style: (("" "%(PDF)%(latex) %(file-line-error) %(extraopts) -output-directory=. %S%(PDFout)"))
+% TeX-source-correlate-mode: t
+% TeX-parse-self: t
+% TeX-parse-all-errors: t
+% eval: (cond ((string-equal system-type "darwin") (progn (setq TeX-view-program-list '(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline -b %n %o %b"))))))
+% eval: (cond ((string-equal system-type "gnu/linux") (progn (setq TeX-view-program-list '(("Evince" "evince --page-index=%(outpage) %o"))))))
+% eval: (cond ((string-equal system-type "gnu/linux") (progn (setq TeX-view-program-selection '((output-pdf "Evince"))))))
+% End:
