@@ -1,18 +1,17 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*- # Tell emacs file type (for syntax coloring)
-\input{./econtexRoot.texinput}
+\input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
+\input{.econtexRoot}
 \documentclass[\econtexRoot/Letter]{subfiles}
 \onlyinsubfile{\externaldocument{\econtexRoot/Letter}} % Get xrefs from main file; only works if main file has already been compiled
 
 \begin{document}
-\notinsubfile{\renewcommand{\econtexRoot}{.}}
 
 %\hypertarget{inSum}{}\par\section{InSum}
 %\notinsubfile{\label{sec:inSum}}
 
 %[Anything student wants CDC to say in conclusion]
 
-
-
+Will effectively communicates technically complex concepts in an intuitive manner - which is why I asked him to give the abovementioned guest lectures. Though I have not had him as a TA, I am confident that Will will be an effective teacher, helping students clarify complex economic concepts into intuitive stories.
 
 \onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
 
