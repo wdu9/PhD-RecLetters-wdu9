@@ -1,1 +1,3 @@
-gaston.m.navarro@frb.gov
+% This would be best placed after the second paragraph in the boilerplate letter (after I talk about my paper's relevance to the paycheck protection program).
+
+Lastly, Will's job market paper shows that unemployment scarring significantly weaken the ability of fiscal austerity to stabilize the debt-to-GDP ratio as scarring erodes future tax revenues thereby increasing pressure on the fiscal deficit. Furthermore, fiscal austerity comes at the cost of a persistent decline in output and a permanent rise in income inequality. Although this idea was proposed by [Summers and Delong 2012](https://www.brookings.edu/wp-content/uploads/2012/03/2012a_delong.pdf) and [Fatas and Summers 2018](https://www.sciencedirect.com/science/article/pii/S0022199617301411), Will's contribution is that he quantitatively evaluates this idea using the long standing microeconomic evidence on unemployment scarring.
