@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Composed with help of Claude 3.5 Sonnet AI. see artifact:
+# 20241129_Format-text-eml-files-for-dragging-to-outlook
+
 cd /Volumes/Data/People/DuW/PhD-RecLetters-shared/Subfiles/Additional-Letters/
 
 for place in CBO FedBoard JCT; do
