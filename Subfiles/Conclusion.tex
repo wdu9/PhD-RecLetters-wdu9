@@ -1,11 +1,10 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*- # Tell emacs file type (for syntax coloring)
 \input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
-\input{econtexPaths}
+\input{.econtexRoot}
 \documentclass[\econtexRoot/Letter]{subfiles}
 \onlyinsubfile{\externaldocument{\econtexRoot/Letter}} % Get xrefs from main file; only works if main file has already been compiled
 
 \begin{document}
-\notinsubfile{\renewcommand{\econtexRoot}{.}}
 
 %\hypertarget{inSum}{}\par\section{InSum}
 %\notinsubfile{\label{sec:inSum}}

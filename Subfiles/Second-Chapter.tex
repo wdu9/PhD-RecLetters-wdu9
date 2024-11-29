@@ -1,5 +1,6 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*- # Tell emacs file type (for syntax coloring)
-\input{./econtexRoot.texinput}
+\input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
+\input{.econtexRoot.tex}
 \documentclass[\econtexRoot/Letter]{subfiles}
 \onlyinsubfile{\externaldocument{\econtexRoot/Letter}} % Get xrefs from main file; only works if main file has already been compiled
 

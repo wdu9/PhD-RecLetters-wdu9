@@ -1,5 +1,7 @@
 #!/bin/bash
 
+realname=$(basename $(realpath Letter.tex) .tex)
+
 latexmk -C
 latexmk Letter 
 
@@ -10,4 +12,4 @@ cd Subfiles
 cd ..
 
 latexmk -c
-pdftotext Letter.pdf ../PhD-RecLetters-private/Letter.pdftotext
+pdftotext Letter.pdf ../PhD-RecLetters-private/$realname.pdftotext

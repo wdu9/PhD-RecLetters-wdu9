@@ -1,6 +1,6 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*- # Tell emacs file type (for syntax coloring)
 \input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
-\input{./econtexRoot.texinput}
+\input{.econtexRoot.tex}
 \documentclass[\econtexRoot/Letter]{subfiles}
 \onlyinsubfile{\externaldocument{\econtexRoot/Letter}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
 
@@ -66,9 +66,7 @@ In the final exercise of his job market paper, he considers a counterfactual whe
 
 \onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
 
-\ifthenelse{\boolean{Web}}{}{
   \onlyinsubfile{\captionsetup[figure]{list=no}}
   \onlyinsubfile{\captionsetup[table]{list=no}}
   \end{document}	\endinput
-}
 
