@@ -1,27 +1,19 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*-     # Configure emacs auctex viewer
-% !TEX root = Letter.tex
-% -*- root: Letter.tex -*-
-
 \input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
-\input{.econtexRoot.tex} % Set paths (like, \LaTeXInputs) to find resources
-\documentclass{econark}  % 
-\usepackage{subfiles}
-%\usepackage{@local/econtex_onlyinsubfile}
-
-\providecommand{\texname}{Letter}
-
-\usepackage{econark-bibfilesfind}
-\bibfilesfind{\texname}
-
-\usepackage{natbib}
-\usepackage{graphicx}
-
+\input{.econtexRoot} % Set paths (like, \LaTeXInputs) to find resources
+\documentclass{econark} % \econtex: see ./econtexRoot
 \usepackage{bibentry}
 \usepackage{ifthen}
 \usepackage{hyperref}
+\usepackage{subfiles}
+\usepackage{natbib}
+\usepackage{econark-ifsubfile}
+\usepackage{econark-bibfilesfind}
+\usepackage{graphicx}
 
+\provideboolean{Web}\setboolean{Web}{false}
 \providecommand{\saynicethings}{}\renewcommand{\saynicethings}{../PhD-RecLetters-private/saynicethings}
-
+\providecommand{\texname}{Letter}
 % Student info
 \newcommand{\firstname}{William}
 \newcommand{\lastname}{Du}
@@ -104,13 +96,11 @@ This recommendation letter is for \href{https://www.william-du.com}{\textbf{\fir
 
 \pagebreak
 
+\bibfilesfind{\texname}
 
 % suppress printing of bibliography
 \nobibliography{\bibfilesfound}\sloppy\end{document}\endinput
-\pagebreak
-% Make the bibliography
 
-\end{document}\endinput
 
 % Lines below help configure AucTeX if that is your editor
 % 

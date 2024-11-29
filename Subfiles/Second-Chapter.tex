@@ -1,5 +1,6 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*- # Tell emacs file type (for syntax coloring)
-\input{./econtexRoot.texinput}
+\input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
+\input{.econtexRoot.tex}
 \documentclass[\econtexRoot/Letter]{subfiles}
 \onlyinsubfile{\externaldocument{\econtexRoot/Letter}} % Get xrefs from main file; only works if main file has already been compiled
 
@@ -10,7 +11,7 @@
 
 An intriguing implication of Will's job market paper is that unemployment risk acts as a much stronger amplifier of business cycles when households understand that job loss can leave long-term scars on earnings. However, this amplification channel hinges on how accurately households perceive the increased probability of job loss during a recession. In Will's \href{https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:3adddfd2-1999-477d-b9f6-b8fbffbf4076}{second chapter}, co-authored with Tao Wang, Xincheng Qiu, and Adrian Monninger, Will and his co-authors use data from the \href{https://www.newyorkfed.org/microeconomics/sce#/}{Survey of Consumer Expectations} (SCE) to assess how households' expectations of job finding and job loss evolve over the business cycle.
 
-The SCE began in 2013 so the only recession it covers is the COVID recession, Will and his co-authors address this limitation by splicing the SCE data with imputations constructed using the \href{https://data.sca.isr.umich.edu/}{Michigan Survey of Consumers}, a longstanding survey of household expectations that dates back to the 1970s. This approach enables them to backcast the job finding and job loss expectations time series to 1978. % CDC to DuW - why only since 1978?
+The SCE began in 2013 so the only recession it covers is the COVID recession.  Will and his co-authors address this limitation by splicing the SCE data with imputations constructed using the \href{https://data.sca.isr.umich.edu/}{Michigan Survey of Consumers}, a longstanding survey of household expectations that dates back to the 1970s. This approach enables them to backcast the job finding and job loss expectations time series to 1978. % CDC to DuW - why only since 1978?
 
 They first document that expectations on the probability of finding a job are highly correlated with the true job finding probability. Second, they find that expectations about the probability of losing a job respond sluggishly to the true job separation rate (consistent with the growing `sticky expectations' literature).
 They then demonstrate that there is substantial heterogeneity across households in how these expectations evolve. Notably, they find that the bottom 25th percentile of households (in terms of job-finding expectations) exhibits significantly more volatile beliefs about unemployment risk compared to other households.
@@ -21,8 +22,9 @@ They then calibrate a heterogeneous agent model to their new empirical findings 
 
 \onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
 
+\ifthenelse{\boolean{Web}}{}{
   \onlyinsubfile{\captionsetup[figure]{list=no}}
   \onlyinsubfile{\captionsetup[table]{list=no}}
-\end{document}
-
+  \end{document}	\endinput
+}
 
