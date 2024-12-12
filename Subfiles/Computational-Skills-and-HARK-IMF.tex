@@ -1,0 +1,62 @@
+% -*- mode: LaTeX; TeX-PDF-mode: t; -*- # Tell emacs file type (for syntax coloring)
+\input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
+\documentclass[\econtexRoot/Letter]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/Letter}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+\notinsubfile{\renewcommand{\econtexRoot}{.}}
+
+%\hypertarget{job-market-paper}{}
+%\par\section{Job Market Paper}
+%\notinsubfile{\label{sec:job-market-paper}}
+
+
+Will possesses expertise in building and solving general equilibrium heterogeneous agent macroeconomic models that incorporate realistic micro-level consumption behavior. This expertise could provide significant value to the IMF by enabling precise quantification of fiscal stimulus impacts. For instance, as my co-author in [*Welfare and Spending Effects of Consumption Stimulus Policies*](https://github.com/llorracc/HAFiscal/blob/master/HAFiscal.pdf), Will developed a HANK model with search and matching frictions to calculate multipliers for unemployment insurance extensions, stimulus checks, and tax cuts.
+
+Furthermore, Will has made substantial contributions to \href{https://github.com/econ-ark/HARK}{HARK}, an open-source Python toolkit for solving heterogeneous agent models that a team of collaborators and I have been developing for several years.  His contributions have been focused on developing methods to compute heterogeneous agent Jacobians. These Jacobians are essential for solving general equilibrium models with rich microeconomic heterogeneity following the Sequence Space Jacobian methodology by \cite{Auclert2021}.
+% Please don't put in a cite key like \cite{Auclert2023} without including the corresponding bib entry.
+Will has created several Jupyter notebooks illustrating how to use HARK to generate these Jacobians and solve general equilibrium HA models. % CDC to DuW: Alan has figured out how to make a direct link to a page that shows stats about his contributions to HARK; please get the parallel link for your contributions and edit this doc to include that link
+
+He developed a notebook for simulating large heterogeneous agent economies with HARK (\href{https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/Transition_Matrix_Example.ipynb}{Simulation notebook}) and another for computing heterogeneous agent Jacobians (\href{https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/Jacobian_Example.ipynb}{Jacobian notebook}). He has also integrated his methods with the \href{https://github.com/shade-econ/sequence-jacobian}{Sequence Space Jacobian toolkit} to solve HANK models (\href{https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/SSJ_example.ipynb}{HANK notebook}). In fact, this work illustrates how deficit-financed government spending generates significantly larger stimulative effects in a HANK framework compared to TANK or RANK models.
+
+For the past two years I have invited Will to lecture on Sequence Space Jacobian methods in my Ph.D.\ computational economics course, for which he created a notebook explaining the mathematics and intuition behind the method (\href{https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/SSJ_explanation.ipynb}{notebook here}). Will employed his technical aptitude for solving HANK models during his internship at the Bank of England to build a HANK model with housing as a discrete choice to quantify the housing wealth channel of monetary policy in the UK (\href{https://github.com/wdu9/HANK_Housing_Block}{slides with code}). These skills are very general purpose; but structural intertemporal modelling is taking over in many fields and the skills Will has developed are eminently transferrable. For example, an immediate application of the work he's done on housing would be the development a macro model that evaluates how monetary policy is transmitted through the housing market, especially since housing models that can capture the distributional consequences of monetary policy are rare. An overview of the computational tools Will has developed can be found \href{https://www.william-du.com/computational-tools}{here}.
+
+Overall, Will's expertise in constructing general equilibrium models to evaluate the effectiveness of fiscal policies makes him a strong candidate for the IMF. His advanced computational skills, developed through integrating microeconomic evidence into these models, enable him to analyze the impact of a wide range of fiscal policies. Notably, he is well-equipped to assess the macroeconomic implications of targeted fiscal policies, such as increasing taxes on households in the highest tax bracket, implementing a wealth tax on those holding the largest share of wealth, or stimulus checks to households in a particular income bracket.
+
+
+
+%Will has also made important contributions to HARK, an open source python toolkit for solving heterogeneous agent models. His contributions have largely focused on developing methods that compute heterogeneous agent Jacobians. These Jacobians are an essential object in solving general equilibrium models with rich microeconomic heterogeneity following the Sequence Space Jacobian methodology of \cite{Auclert2023}.  Will has produced several Jupyter notebooks demonstrating how to use the HARK code to produce these Jacobians and then solve general equilibrium models with rich micro heterogeneity. In particular, he has written notebooks on how to utilize his methods to simulate large heterogeneous agent economies with HARK (\href{https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/Transition_Matrix_Example.ipynb}{Simulation notebook}) and how to compute heterogeneous agent Jacobians (\href{https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/Jacobian_Example.ipynb}{Jacobian notebook}). In turn, Will has used the methods he constructed in these notebooks to write additional notebooks on how to combine HARK and the \href{https://github.com/shade-econ/sequence-jacobian}{Sequence Space Jacobian toolkit} to solve HANK models (\href{https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/SSJ_example.ipynb}{HANK notebook}) and a Krusell Smith model without aggregate uncertainty (\href{https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/KS-HARK-presentation.ipynb}{Krusell Smith Notebook}). For two consecutive years, I have invited Will to give a lecture on Sequence Space Jacobian methods in my Ph.D. computational economics course. For his lecture, Will created a jupyter notebook detailing the mathematics and intuition of the method (\href{https://github.com/econ-ark/HARK/blob/master/examples/ConsNewKeynesianModel/SSJ_explanation.ipynb}{notebook here}). 
+
+
+
+
+
+
+
+
+
+%in a particular dimension: The consequences of a recession for subsequent output. To gauge the magnitude of the effects, Will does an exercise to evaluate the aftermath of the Great Recession in the United States and in the Euro zone, motivated by the fact that in Europe the byword for the fiscal response to the GR was ``austerity'' while in the US there was considerable stimulus (and a litany of criticism that the US should be pursuing austerity not stimulus). In Will's model, as in the data, the stimulative policy results in a much lower permanent drop in GDP than the austerity policy, corresponding to the actual outcomes in the US versus Europe.
+
+%Consistent with the old literature suggesting that there is a unit root in GDP, Will finds that in his HANK model a recession results in a permanent reduction in the level of GDP because the shocks to human capital are permanent. These results connect not only with the old unit root and ``hysteresis'' literatures, but also with the newer ``secular stagnation'' literature. 
+
+
+
+
+
+% Put here a link to the abstract of the JMP:
+
+%%% Template for any figures
+%\begin{figure}[ht!]
+%	\centering
+%	\includegraphics[width = 0.8\textwidth]{\FigDir/dur_vs_exp_emp.png}
+	%\caption{Durable Expenditure and Expected Unemployment Rate} \label{fig:dur_vs_exp_emp}
+%\end{figure}
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+  \end{document}	\endinput
+}
+

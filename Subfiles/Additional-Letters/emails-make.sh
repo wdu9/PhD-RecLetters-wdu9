@@ -2,7 +2,7 @@
 
 cd /Volumes/Data/People/DuW/PhD-RecLetters-shared/Subfiles/Additional-Letters/
 
-for place in CBO FedBoard JCT; do
+for place in CBO FedBoard JCT IMF; do
 
     cd $place
     dstn=../../../../PhD-RecLetters-private/$place
