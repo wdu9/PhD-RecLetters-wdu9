@@ -1,23 +1,23 @@
 #!/bin/bash
 
+name=Letter
+[[ -L "Letter.tex" ]] && nametex="$(basename $(realpath Letter.tex))" && name="${nametex%.*}"
+
+echo "Processing $name"
 
 latexmk -C
-latexmk Letter 
-bibtex Letter
-latexmk Letter 
-
-
 cd Subfiles
 
 ./Subfiles.sh
 
 cd ..
 
-latexmk -c
+pdflatex $name
+bibtex   $name
+pdflatex $name
+pdflatex $name
 
-[[ -L "Letter.tex" ]] && nametex="$(basename $(realpath Letter.tex))" && name="${nametex%.*}" && echo "$name"
-
-cp -p Letter.pdf ../PhD-RecLetters-private/$name.pdf
+cp -p $name.pdf ../PhD-RecLetters-private/$name.pdf
 pdftotext $name.pdf ../PhD-RecLetters-private/$name.pdftotext
 open ../PhD-RecLetters-private/$name.pdf
 
