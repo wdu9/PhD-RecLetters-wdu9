@@ -1,5 +1,6 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*- # Tell emacs file type (for syntax coloring)
 \input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
+\input{econtexRoot.texinput}  % allow latex to find custom stuff
 \documentclass[\econtexRoot/Letter]{subfiles}
 \onlyinsubfile{\externaldocument{\econtexRoot/Letter}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
 
@@ -11,7 +12,7 @@
 %\notinsubfile{\label{sec:job-market-paper}}
 
 
-Will possesses expertise in building and solving general equilibrium heterogeneous agent macroeconomic models that incorporate realistic micro-level consumption behavior. This expertise could provide significant value to the IMF by enabling precise quantification of fiscal stimulus impacts. For instance, as my co-author in [*Welfare and Spending Effects of Consumption Stimulus Policies*](https://github.com/llorracc/HAFiscal/blob/master/HAFiscal.pdf), Will developed a HANK model with search and matching frictions to calculate multipliers for unemployment insurance extensions, stimulus checks, and tax cuts.
+Will possesses expertise in building and solving general equilibrium heterogeneous agent macroeconomic models that incorporate realistic micro-level consumption behavior. This expertise could provide significant value to the IMF by enabling precise quantification of fiscal stimulus impacts. For instance, as my co-author in \href{https://github.com/llorracc/HAFiscal/blob/master/HAFiscal.pdf}{Welfare and Spending Effects of Consumption Stimulus Policies}, Will developed a HANK model with search and matching frictions to calculate multipliers for unemployment insurance extensions, stimulus checks, and tax cuts.
 
 Furthermore, Will has made substantial contributions to \href{https://github.com/econ-ark/HARK}{HARK}, an open-source Python toolkit for solving heterogeneous agent models that a team of collaborators and I have been developing for several years.  His contributions have been focused on developing methods to compute heterogeneous agent Jacobians. These Jacobians are essential for solving general equilibrium models with rich microeconomic heterogeneity following the Sequence Space Jacobian methodology by \cite{Auclert2021}.
 % Please don't put in a cite key like \cite{Auclert2023} without including the corresponding bib entry.
